@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interpol Red Notices Explorer</title>
+    <meta name="description" content="Explore Interpol Red Notices visually. A dynamic web app to search and view red notices.">
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Interpol <span class="highlight">Red Notices</span></h1>
+                <p>Global database of wanted persons</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="stats-bar">
+                <p>Showing <span id="current-page-text">1</span> of <span id="total-pages-text">-</span> pages</p>
+                <p>Total Records: <span id="total-records-text">-</span></p>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loader" class="loader-container">
+                <div class="spinner"></div>
+                <p>Fetching international records...</p>
+            </div>
+
+            <!-- Grid Container for Notices -->
+            <div id="notices-grid" class="notices-grid"></div>
+
+            <!-- Pagination Controls -->
+            <div class="pagination-container">
+                <button id="prev-btn" class="btn primary-btn" disabled>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                    Previous
+                </button>
+                <div class="page-indicators" id="page-indicators">
+                    <!-- Page numbers will be dynamically injected here -->
+                </div>
+                <button id="next-btn" class="btn primary-btn">
+                    Next
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- App Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
